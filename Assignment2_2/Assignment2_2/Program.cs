@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Assignment2_2
 {
@@ -10,22 +11,14 @@ namespace Assignment2_2
     {
         static void Main(string[] args)
         {
-            TextAnalyzer text = new TextAnalyzer();
-            Dictionary<char, int> characters = new Dictionary<char, int>();
-            string TextGenerate = text.getText();
-            Console.WriteLine("Generated string: " + TextGenerate);
-
-            foreach(char c in TextGenerate)
+            TextAnalyzer t = new TextAnalyzer();
+            Console.WriteLine("Generated characters:");
+            Console.WriteLine(t.text);
+            SortedList<char, int> charactersList = t.getCharactersList();
+            
+            foreach(char c in charactersList.Keys)
             {
-                if (!characters.ContainsKey(c))
-                    characters.Add(c, 1);
-                characters[c] += 1;
-            }
-
-            Console.WriteLine("Characters counted: ");
-            foreach(KeyValuePair<char, int> character in characters)
-            {
-                Console.WriteLine("Character: {0} \n Appearance times: {1} ", character.Key, character.Value);
+                Console.WriteLine( "Character " + c + " appears: " + charactersList[c] + " times");
             }
             Console.ReadLine();
         }

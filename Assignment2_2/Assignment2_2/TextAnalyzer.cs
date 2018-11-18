@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace Assignment2_2
 {
-    class TextAnalyzer
+    public class TextAnalyzer
     {
-        string text;
-        private static Random random = new Random();
-        public static string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
+        public string text;
         public TextAnalyzer()
         {
-            this.text = RandomString(50);
+            Random random = new Random();
+            const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            this.text = new string(Enumerable.Repeat(characters, 50).Select(s => s[random.Next(s.Length)]).ToArray());
         }
-
-        public string getText()
+        public SortedList<char, int> getCharactersList()
         {
-            return this.text;
+            SortedList<char, int> charactersList = new SortedList<char, int>();
+            foreach (char c in text)
+            {
+                if (charactersList.ContainsKey(c))
+                {
+                    charactersList[c]++;
+                }
+                else charactersList[c] = 1;
+            }
+            return charactersList;
         }
     }
 }
+        // need to use hashtable and from i = 1; i < 50, pick random an element in hashtable, then use it for this.text in constructor
