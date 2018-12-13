@@ -22,7 +22,7 @@ namespace Assignment3_3
         {
             if (this.id == id)
             {
-                return toString();
+                return this.toString();
             }
             else return null;
         }

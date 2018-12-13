@@ -13,7 +13,7 @@ namespace Assignment3_3
             Flight[] flightList = new Flight[3];
 
             flightList[0] = new Flight(123, "NY", "LA", "24.1.2018");
-            flightList[1] = new Flight(52, "HEL", "VAA", "16.04.2011");
+            flightList[1] = new Flight(456, "HEL", "VAA", "16.04.2011");
 
             Passenger[] passengerList = new Passenger[3];
 
@@ -45,7 +45,7 @@ namespace Assignment3_3
             }
             for (i = 0; i < 2; i++)
             {
-                Console.WriteLine("Ticket ID: "+ ticketList[i].ticketID+  " details \n" );
+                Console.WriteLine("Ticket ID: "+ ticketList[i].ticketID+  "'s details \n" );
                 Console.Write(ticketList[i].getInfo(passengerList));
             }
 

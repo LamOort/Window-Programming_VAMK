@@ -17,7 +17,7 @@ namespace Assignment3_1
 
             for (int i=0; i<4; i++)
             {
-                Console.WriteLine(airlineCompany[i].ToString());
+                Console.WriteLine(airlineCompany[i].toString());
             }
 
             Console.Write("Please enter a flight ID: ");

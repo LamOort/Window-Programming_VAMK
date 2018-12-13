@@ -28,7 +28,7 @@ namespace Assignment3_3
         }
         public override string getInfo(int id)
         {
-            return base.getInfo(id) + "\n\nMenu:" + menu + "Bonus: " + this.Bonus;
+            return base.getInfo(id) + "\n\nMenu:" + menu + "   |Bonus: " + this.Bonus;
         }
     }
 }

@@ -24,11 +24,11 @@ namespace Assignment3_1
         {
             if (this.id == id)
             {
-                return this.ToString();
+                return this.toString();
             }
             else return null;
         }
-        public String ToString()
+        public String toString()
         {
             return "Flight ID: " + id + "| Origin: " + origin + "| Destination: " + destination + "| Date: " + date + "| Price: " + price;
         }
